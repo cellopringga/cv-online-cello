@@ -1,15 +1,44 @@
 <h2 class="section-title">Certificates</h2>
 <div class="grid">
     <div class="card" style="text-align: center;">
-        <i class="fa fa-award" style="font-size: 3rem; color: #ffbc00;"></i>
+        <img src="sertif1.jpeg" alt="Sertifikat JavaScript" class="cert-img">
+        
+        <i class="fa fa-award" style="font-size: 2rem; color: #ffbc00; margin-top: 10px;"></i>
         <h3 style="margin-top:10px;">JavaScript Intermediate</h3>
         <p>Dicoding Indonesia</p>
         <small>Diterbitkan: 2024</small>
     </div>
+
     <div class="card" style="text-align: center;">
-        <i class="fa fa-award" style="font-size: 3rem; color: #ffbc00;"></i>
+        <img src="sertif2.jpeg" alt="Sertifikat Responsive Design" class="cert-img">
+        
+        <i class="fa fa-award" style="font-size: 2rem; color: #ffbc00; margin-top: 10px;"></i>
         <h3 style="margin-top:10px;">Responsive Web Design</h3>
         <p>FreeCodeCamp</p>
         <small>Diterbitkan: 2023</small>
     </div>
 </div>
+
+<style>
+    /* Styling agar foto sertifikat rapi */
+    .cert-img {
+        width: 100%;            /* Mengikuti lebar card */
+        height: 180px;          /* Tinggi tetap agar seragam */
+        object-fit: cover;      /* Foto dipotong rapi jika beda ukuran */
+        border-radius: 8px;     /* Sudut melengkung */
+        border: 1px solid #ddd; /* Bingkai tipis */
+        margin-bottom: 10px;
+        transition: transform 0.3s;
+    }
+
+    .cert-img:hover {
+        transform: scale(1.05); /* Efek zoom saat disentuh/hover */
+    }
+
+    /* Penyesuaian untuk HP */
+    @media (max-width: 600px) {
+        .cert-img {
+            height: 150px; /* Sedikit lebih kecil di HP */
+        }
+    }
+</style>
