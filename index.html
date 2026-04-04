@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium SPA CV - Cello Ondrea Pringga</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #46a3a7;
+      --secondary: #54dfe4;
+      --dark: #333;
+      --light: #f4f7f6;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+    body {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      min-height: 100vh;
+      padding-bottom: 50px;
+    }
+
+    /* Level 2 & 3: Responsive Nav */
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+    }
+
+    nav button {
+      padding: 12px 18px;
+      border: none;
+      border-radius: 25px;
+      background: rgba(255,255,255,0.2);
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    nav button:hover, nav button.active {
+      background: white;
+      color: var(--dark);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Level 3: Card Layout */
+    #content {
+      max-width: 900px;
+      margin: 20px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      min-height: 400px;
+    }
+
+    /* Level 2: Media Queries */
+    @media (max-width: 600px) {
+      nav { padding: 10px; gap: 5px; }
+      nav button { padding: 8px 12px; font-size: 0.8rem; }
+      #content { margin: 15px; padding: 20px; border-radius: 20px; }
+    }
+
+    .section-title { text-align: center; margin-bottom: 30px; color: var(--primary); }
+    .loading { text-align: center; font-style: italic; color: #666; }
+    .error { color: red; text-align: center; }
+    
+    /* Skills Grid */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
+    .card { padding: 20px; border: 1px solid #eee; border-radius: 15px; transition: 0.3s; }
+    .card:hover { border-color: var(--primary); background: #f9ffff; }
+  </style>
+</head>
+<body>
+
+  <nav id="mainNav">
+    <button data-page="home.html" class="active"><i class="fa fa-home"></i> Home</button>
+    <button data-page="about.html"><i class="fa fa-user"></i> About</button>
+    <button data-page="skills.html"><i class="fa fa-code"></i> Skills</button>
+    <button data-page="github.html"><i class="fa-brands fa-github"></i> GitHub</button>
+    <button data-page="contact.html"><i class="fa fa-envelope"></i> Contact</button>
+    <button data-page="education.html"><i class="fa fa-envelope"></i> Education</button>
+    <button data-page="experience.html"><i class="fa fa-envelope"></i> Experience</button>
+    <button data-page="portfolio.html"><i class="fa fa-envelope"></i> Portfolio</button>
+    <button data-page="certificate.html"><i class="fa fa-envelope"></i> Certificate</button>
+  </nav>
+
+  <div id="content">
+    </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
