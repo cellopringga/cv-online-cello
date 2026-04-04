@@ -1,8 +1,51 @@
-<h2>Home</h2>
-<img src="cel.jpeg" alt="Foto Profil">
+<div class="home-container">
+    <h2>Home</h2>
+    <img src="cel.jpeg" alt="Foto Profil" class="profile-pic">
 
-<h3>Nama:</h3>
-<p>Cello Ondrea Pringga</p>
+    <h3>Nama:</h3>
+    <p>Cello Ondrea Pringga</p>
 
-<h3>Deskripsi:</h3>
-<p>Saya adalah mahasiswa yang tertarik pada pengembangan web dan desain UI/UX. Saya senang belajar hal baru dan mengembangkan keterampilan di bidang teknologi.</p>
+    <h3>Deskripsi:</h3>
+    <p>Saya adalah mahasiswa yang tertarik pada pengembangan web dan desain UI/UX. Saya senang belajar hal baru dan mengembangkan keterampilan di bidang teknologi.</p>
+</div>
+
+<style>
+    .home-container {
+        text-align: center; /* Membuat konten di tengah agar lebih rapi di HP */
+        padding: 10px;
+    }
+
+    .profile-pic {
+        /* UKURAN FOTO AGAR RESPONSIF */
+        width: 100%;          /* Mengikuti lebar layar */
+        max-width: 200px;     /* Batas maksimal di laptop/HP agar tidak raksasa */
+        height: auto;         /* Agar tidak gepeng */
+        
+        /* Opsional: Agar lebih keren (Level 3 UI/UX) */
+        border-radius: 15px;  /* Sudut foto agak melengkung */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+        margin: 20px 0;
+    }
+
+    h2 {
+        color: #46a3a7;
+    }
+
+    h3 {
+        margin-top: 20px;
+        color: #333;
+    }
+
+    p {
+        color: #666;
+        line-height: 1.6;
+    }
+
+    /* Penyesuaian khusus layar HP yang sangat kecil */
+    @media (max-width: 480px) {
+        .profile-pic {
+            max-width: 150px; /* Lebih kecil lagi kalau di layar HP kecil */
+        }
+        h2 { font-size: 1.5rem; }
+    }
+</style>
