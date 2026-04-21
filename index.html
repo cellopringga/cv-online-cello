@@ -1,148 +1,119 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Premium CV - Cello Ondrea Pringga</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #46a3a7;
-      --secondary: #54dfe4;
-      --accent: #ffbc00;
-      --bg-dark: #0f172a;
-      --glass: rgba(255, 255, 255, 0.85);
-    }
+<style>
+  :root {
+    --primary: #46a3a7;
+    --secondary: #54dfe4;
+    --accent: #ffbc00;
+    --glass: rgba(255, 255, 255, 0.8);
+    --text-main: #2d3436;
+  }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
 
-    body {
-      background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
-      min-height: 100vh;
-      color: #1e293b;
-      overflow-x: hidden;
-    }
+  body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    color: var(--text-main);
+  }
 
-    /* Modern Glass Nav */
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      padding: 15px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.4);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255,255,255,0.3);
-    }
+  /* Navigasi Glassmorphism yang Melayang */
+  nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
 
-    nav button {
-      padding: 10px 20px;
-      border: 1px solid rgba(255,255,255,0.5);
-      border-radius: 50px;
-      background: var(--glass);
-      color: #475569;
-      cursor: pointer;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      font-size: 0.85rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+  nav button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    background: var(--glass);
+    color: #636e72;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
 
-    nav button:hover {
-      background: var(--primary);
-      color: white;
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 10px 20px rgba(70, 163, 167, 0.2);
-    }
+  nav button:hover, nav button.active {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(70, 163, 167, 0.3);
+  }
 
-    nav button.active {
-      background: var(--primary);
-      color: white;
-      box-shadow: 0 8px 15px rgba(70, 163, 167, 0.3);
-    }
+  /* Container Utama yang Simetris */
+  #content {
+    max-width: 900px;
+    margin: 50px auto;
+    background: white;
+    padding: 60px 40px;
+    border-radius: 40px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+    text-align: center; /* Memastikan semua teks & judul di tengah */
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.8);
+  }
 
-    /* Main Container */
-    #content {
-      max-width: 1000px;
-      margin: 40px auto;
-      background: var(--glass);
-      padding: 50px;
-      border-radius: 40px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(255,255,255,0.7);
-      position: relative;
-    }
+  /* Judul Seksi yang Cantik */
+  .section-title { 
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: var(--primary);
+    position: relative;
+    display: inline-block;
+  }
 
-    /* Animations */
-    .page-enter {
-      animation: fadeInUp 0.6s ease forwards;
-    }
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 5px;
+    background: var(--accent);
+    margin: 10px auto 0; /* Garis bawah judul juga di tengah */
+    border-radius: 10px;
+  }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+  /* Card Grid yang Seimbang */
+  .grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; 
+    margin-top: 20px;
+    justify-content: center;
+  }
 
-    /* Typography & Helper Classes */
-    .section-title { 
-      font-size: 2rem; 
-      font-weight: 800; 
-      margin-bottom: 35px; 
-      color: var(--primary);
-      letter-spacing: -0.5px;
-    }
+  .card { 
+    padding: 30px; 
+    background: #fdfdfd;
+    border-radius: 25px; 
+    border: 1px solid #f1f2f6;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+  }
 
-    .grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-      gap: 25px; 
-    }
+  .card:hover { 
+    transform: scale(1.03);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border-color: var(--secondary);
+  }
 
-    .card { 
-      padding: 25px; 
-      background: white;
-      border-radius: 24px; 
-      border: 1px solid #f1f5f9;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    }
-
-    .card:hover { 
-      transform: translateY(-8px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-      border-color: var(--primary);
-    }
-
-    @media (max-width: 768px) {
-      #content { margin: 20px; padding: 30px; border-radius: 30px; }
-      nav { padding: 10px; }
-      nav button { padding: 8px 15px; font-size: 0.75rem; }
-    }
-  </style>
-</head>
-<body>
-
-  <nav id="mainNav">
-    <button data-page="home.html" class="active"><i class="fa fa-home"></i> Home</button>
-    <button data-page="about.html"><i class="fa fa-user"></i> About</button>
-    <button data-page="skills.html"><i class="fa fa-code"></i> Skills</button>
-    <button data-page="github.html"><i class="fa-brands fa-github"></i> GitHub</button>
-    <button data-page="contact.html"><i class="fa fa-envelope"></i> Contact</button>
-    <button data-page="experience.html"><i class="fa fa-briefcase"></i> Experience</button>
-    <button data-page="portfolio.html"><i class="fa fa-folder-open"></i> Project</button>
-    <button data-page="certificate.html"><i class="fa fa-certificate"></i> Certif</button>
-  </nav>
-
-  <main id="content" class="page-enter">
-    </main>
-
-  <script src="app.js"></script>
-</body>
-</html>
+  /* Responsif Mobile */
+  @media (max-width: 600px) {
+    #content { margin: 20px; padding: 30px 20px; }
+    .section-title { font-size: 1.8rem; }
+    nav { gap: 8px; padding: 15px 10px; }
+    nav button { padding: 10px 15px; font-size: 0.8rem; }
+  }
+</style>
