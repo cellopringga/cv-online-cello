@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Premium CV - Cello Ondrea Pringga</title>
   
-  <!-- KONFIGURASI PWA DASAR -->
+  <!-- KONFIGURASI PWA LEVEL 2 -->
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#46a3a7">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="apple-touch-icon" href="cel.jpeg">
+  <link rel="apple-touch-icon" href="cel.jpeg"> <!-- Menggunakan cel.jpeg sebagai ikon Apple -->
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -33,7 +33,6 @@
       color: #1e293b;
     }
 
-    /* Navigasi Glassmorphism */
     nav {
       display: flex;
       justify-content: center;
@@ -70,7 +69,6 @@
       box-shadow: 0 10px 20px rgba(70, 163, 167, 0.3);
     }
 
-    /* Main Content Container */
     #content {
       max-width: 900px;
       margin: 40px auto;
@@ -81,7 +79,6 @@
       border: 1px solid rgba(255, 255, 255, 0.7);
       text-align: center;
       min-height: 400px;
-      transition: all 0.5s ease;
     }
 
     .section-title { 
@@ -100,29 +97,6 @@
       background: var(--accent);
       margin: 10px auto 0;
       border-radius: 10px;
-    }
-
-    .grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-      gap: 25px; 
-      margin-top: 30px;
-      justify-content: center;
-    }
-
-    .card { 
-      padding: 30px; 
-      background: white;
-      border-radius: 25px; 
-      border: 1px solid #f1f5f9;
-      transition: all 0.3s ease;
-      text-align: center;
-    }
-
-    .card:hover { 
-      transform: translateY(-10px);
-      box-shadow: 0 20px 30px rgba(0,0,0,0.05);
-      border-color: var(--primary);
     }
 
     @media (max-width: 768px) {
@@ -146,17 +120,16 @@
 
   <div id="content"></div>
 
-  <!-- PENDAFTARAN SERVICE WORKER -->
   <script>
+    // Registrasi Service Worker agar aplikasi bisa di-install
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('sw.js')
-          .then(reg => console.log('Service Worker terdaftar!', reg))
-          .catch(err => console.log('Gagal mendaftarkan Service Worker:', err));
+          .then(reg => console.log('SW terdaftar!'))
+          .catch(err => console.error('SW gagal!', err));
       });
     }
   </script>
-
   <script src="app.js"></script>
 </body>
 </html>
