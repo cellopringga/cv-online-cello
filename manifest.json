@@ -8,13 +8,13 @@
   "theme_color": "#46a3a7",
   "icons": [
     {
-      "src": "cel.jpeg",
+      "src": "cello.jpeg",
       "sizes": "192x192",
       "type": "image/jpeg",
       "purpose": "any maskable"
     },
     {
-      "src": "cel.jpeg",
+      "src": "cello.jpeg",
       "sizes": "512x512",
       "type": "image/jpeg",
       "purpose": "any maskable"
