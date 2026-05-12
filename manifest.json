@@ -1,23 +1,21 @@
 {
-  "name": "CV Premium Cello Ondrea Pringga",
+  "name": "CV Cello Ondrea Pringga",
   "short_name": "CV Cello",
-  "description": "Portofolio Online Cello Ondrea Pringga",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#f0f4f8",
+  "background_color": "#46a3a7",
   "theme_color": "#46a3a7",
+  "description": "Curriculum Vitae Progressive Web App of Cello Ondrea Pringga",
   "icons": [
     {
-      "src": "cello.jpeg",
+      "src": "cel.jpeg",
       "sizes": "192x192",
-      "type": "image/jpeg",
-      "purpose": "any maskable"
+      "type": "image/jpeg"
     },
     {
-      "src": "cello.jpeg",
+      "src": "cel.jpeg",
       "sizes": "512x512",
-      "type": "image/jpeg",
-      "purpose": "any maskable"
+      "type": "image/jpeg"
     }
   ]
 }
