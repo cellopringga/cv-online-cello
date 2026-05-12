@@ -1,12 +1,12 @@
 $(document).ready(function () {
   function loadPage(page) {
     const content = $("#content");
-    content.fadeOut(300, function() {
+    content.fadeOut(200, function() {
       $(this).load(page, function (response, status) {
         if (status === "error") {
-          $(this).html("<h2 class='section-title'>Oops!</h2><p>Gagal memuat konten.</p>");
+          $(this).html("<div class='card'><h2>Oops!</h2><p>Gagal memuat konten. Pastikan file " + page + " tersedia.</p></div>");
         }
-        $(this).hide().fadeIn(500);
+        $(this).hide().fadeIn(300);
       });
     });
   }
