@@ -3,133 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Premium CV - Cello Ondrea Pringga</title>
+  <title>CV Cello Ondrea Pringga - PWA</title>
   
-  <!-- KONFIGURASI PWA LEVEL 2 -->
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#46a3a7">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="apple-touch-icon" href="cel.jpeg"> <!-- Menggunakan cel.jpeg sebagai ikon Apple -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="CV Cello">
+  <link rel="apple-touch-icon" href="cel.jpeg">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  
   <style>
-    :root {
-      --primary: #46a3a7;
-      --secondary: #54dfe4;
-      --accent: #ffbc00;
-      --glass: rgba(255, 255, 255, 0.85);
-      --bg: #f0f4f8;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
-
-    body {
-      background: radial-gradient(circle at top right, #e0f2f1, #ffffff, #b2dfdb);
-      min-height: 100vh;
-      color: #1e293b;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      padding: 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.3);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    }
-
-    nav button {
-      padding: 12px 25px;
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      border-radius: 50px;
-      background: var(--glass);
-      color: #475569;
-      cursor: pointer;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      font-weight: 600;
-      font-size: 0.9rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    nav button:hover, nav button.active {
-      background: var(--primary);
-      color: white;
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(70, 163, 167, 0.3);
-    }
-
-    #content {
-      max-width: 900px;
-      margin: 40px auto;
-      background: var(--glass);
-      padding: 60px 40px;
-      border-radius: 40px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      text-align: center;
-      min-height: 400px;
-    }
-
-    .section-title { 
-      font-size: 2.5rem; 
-      font-weight: 800; 
-      margin-bottom: 40px; 
-      color: var(--primary);
-      display: inline-block;
-    }
-
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 60%;
-      height: 6px;
-      background: var(--accent);
-      margin: 10px auto 0;
-      border-radius: 10px;
-    }
-
-    @media (max-width: 768px) {
-      #content { margin: 20px; padding: 40px 20px; }
-      nav button { padding: 10px 15px; font-size: 0.8rem; }
-    }
+    :root { --primary: #46a3a7; --bg: #f4f7f6; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--bg); }
+    header { background: var(--primary); color: white; padding: 20px; text-align: center; position: sticky; top: 0; z-index: 1000; }
+    nav { background: white; display: flex; overflow-x: auto; white-space: nowrap; border-bottom: 1px solid #ddd; }
+    nav button { flex: 1; padding: 15px; border: none; background: none; cursor: pointer; font-weight: bold; color: #555; }
+    nav button.active { color: var(--primary); border-bottom: 3px solid var(--primary); }
+    #content { padding: 20px; max-width: 800px; margin: auto; min-height: 70vh; }
+    .card { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; }
+    footer { text-align: center; padding: 20px; color: #777; font-size: 0.9rem; }
   </style>
 </head>
 <body>
 
-  <nav id="mainNav">
-    <button data-page="home.html" class="active"><i class="fa fa-home"></i> Home</button>
-    <button data-page="about.html"><i class="fa fa-user"></i> About</button>
-    <button data-page="skills.html"><i class="fa-solid fa-layer-group"></i> Skills</button>
-    <button data-page="github.html"><i class="fa-brands fa-github"></i> GitHub</button>
-    <button data-page="contact.html"><i class="fa fa-envelope"></i> Contact</button>
-    <button data-page="experience.html"><i class="fa fa-briefcase"></i> Experience</button>
-    <button data-page="portfolio.html"><i class="fa fa-folder-open"></i> Portfolio</button>
-    <button data-page="certificate.html"><i class="fa fa-certificate"></i> Certif</button>
-  </nav>
+<header>
+  <h1>CV Digital</h1>
+</header>
 
-  <div id="content"></div>
+<nav id="mainNav">
+  <button class="active" data-page="home.html">Home</button>
+  <button data-page="about.html">About</button>
+  <button data-page="education.html">Edu</button>
+  <button data-page="experience.html">Work</button>
+  <button data-page="skills.html">Skills</button>
+  <button data-page="portfolio.html">Porto</button>
+  <button data-page="certificate.html">Cert</button>
+  <button data-page="contact.html">Contact</button>
+</nav>
 
-  <script>
-    // Registrasi Service Worker agar aplikasi bisa di-install
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js')
-          .then(reg => console.log('SW terdaftar!'))
-          .catch(err => console.error('SW gagal!', err));
-      });
-    }
-  </script>
-  <script src="app.js"></script>
+<div id="content">
+  </div>
+
+<footer>
+  <p>&copy; 2026 Cello Ondrea Pringga - Universitas Ma'soem</p>
+</footer>
+
+<script src="app.js"></script>
+<script>
+  // Register Service Worker untuk mendukung PWA
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js')
+        .then(reg => console.log('SW Registered!', reg))
+        .catch(err => console.log('SW Failed!', err));
+    });
+  }
+</script>
 </body>
 </html>
