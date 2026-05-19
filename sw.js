@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cv-pwa-v3';
+const CACHE_NAME = 'cv-pwa-v4'; // <-- SUDAH DIUBAH JADI v4 AGAR OTOMATIS UPDATE
 const assets = [
   './',
   './index.html',
